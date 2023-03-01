@@ -1,0 +1,61 @@
+ANOTACIONES-JPA
+
+-----------------------------------
+ 
+@Entity: le estaremos diciendo a JPA que esta clase es una Entidad y deberá ser administrada por EntityManager -> cuyo estado es persistido de manera asociada a una tabla en una base de datos relacional. ... Normalmente las entidades están relacionadas con otras entidades, y estas relaciones son expresadas a través de metadatos objeto/relacional
+
+-----------------------------------
+
+@Table: es utilizada para indicarle a JPA contra que tabla debe de mapear una entidad, de esta manera cuando se realice una persistencia, borrado o select de la entidad, JPA sabrá contra que tabla de la base de datos deberá interactuar.
+
+-----------------------------------
+
+@Id: le decimos a JPA que este atributo sera la clave unica(ID) de la entidad, solo puede existir una clave primaria
+
+-----------------------------------
+
+@GeneratedValue(strategy = GenerationType.IDENTITY): la anotación nos permite decirle a JPA que el atributo sera auto-incrementable ->luego en parentecis le decimos la estrategia que usara para el auto-incremento.
+
+-> IDENTITY: es para mysql.
+
+-----------------------------------
+
+@Transient: se utiliza para indicarle a JPA que un atributo de una Entidad no debe de ser persistente, de esta manera, JPA pasa por alto el atributo y no es tomado en cuenta a la hora de persistir el Objeto.
+
+-----------------------------------
+
+@OneToOne: se utilizan cuando existe una profunda relación entre la Entidad origen y destino,de tal forma que la entidad destino le pertenece a la Entidad origen y solo a ella, por ende, la existencia de la entidad destino depende de la Entidad origen.
+
+-----------------------------------
+
+@JoinColumn(name="nombre de la llave FK"): Esta anotación sirve en JPA para hacer referencia a la columna que es clave externa en la tabla y que se encarga de definir la relación 
+
+-----------------------------------
+
+@ManyToOne: Es una de las anotaciones mas habituales a nivel de JPA y se encarga de generar una relación de muchos a uno . @JoinColumn:Esta anotación sirve en JPA para hacer referencia a la columna que es clave externa en la tabla y que se encarga de definir la relación 
+
+-----------------------------------
+
+@ManyToMany(fetch = FetchType.EAGER): Muchos a muchos.
+
+-----------------------------------
+
+@JoinTable: anotación se utiliza para especificar el nombre de la tabla a través del name atributo, así como la columna de clave externa que hace referencia a la post tabla (por ejemplo, joinColumns ) y la columna de clave externa en la post_tag tabla de enlaces que hace referencia a la Tag entidad.
+
+-----------------------------------
+
+
+
+-----------------------------------
+
+-----------------------------------
+
+
+
+-----------------------------------
+
+-----------------------------------
+
+
+
+-----------------------------------

@@ -1,0 +1,10 @@
+// index -> ejecuta toda la aplicación
+// index -> rutas -> controlador
+
+// env. -> almacenamos nuestras variables de entorno
+
+// Public -> carpeta que le da respuesta a los navegadores de lo que sucede en el servidor - cuando conocen las rutas
+
+
+// MIDDLEWARE -> 
+// Un middleware no es mas que una función

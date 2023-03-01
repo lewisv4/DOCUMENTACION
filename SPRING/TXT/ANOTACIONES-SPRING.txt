@@ -1,0 +1,71 @@
+ANOTACIONES
+
+-----------------------------------
+
+@SpringBootApplication: es una anotación que ejecuta tres anotaciones de autoconfiguración con sus valores por defecto: @EnableAutoConfiguration. @ComponentScan. @Configuration.
+
+-----------------------------------
+
+@Controller: indica que la clase es un bean controlador y nos ahorra el trabajo de definir en XML el bean correspondiente. ... Para que Spring sepa qué método del controlador debe procesar la petición HTTP se puede usar de nuevo la anotación @RequestMapping. Podemos especificar qué método HTTP (GET, POST,...)
+
+-----------------------------------
+
+@RestController: es añadida a partir de Spring 4.0 esto mejora la creación de RESTful web services y simplifica el uso de las anotaciones @Controller y @ResponseBody. @Controller en un @Component especial mientras @RestController es un @Controller especial.
+
+-----------------------------------
+
+@GetMapping: es una anotación de Spring Framework que aparece con Spring 4.3 y nos permite simplificar el manejo de los diferentes métodos de Spring MVC y los @RequestMappings que a veces se hacen un poco pesados. A partir de ahora nosotros podemos usar estas anotaciones y simplificar el código
+
+-----------------------------------
+
+@RequestMapping: se usa para mapear un método de solicitud HTTP particular a una clase / método específico en el controlador que manejará la solicitud respectiva. Esta anotación se puede aplicar en ambos niveles: Nivel de clase: asigna la URL de la solicitud
+
+-----------------------------------
+
+@PathVariable: es la anotación que nos sirve dentro de Spring framework para configurar variables dentro de los propios segmentos de la URL algo que a nivel de Arquitecturas REST es imprescindible. Vamos a ver un par de ejemplos de como construir unas urls REST que se apoyen en este tipo de anotación.
+
+-----------------------------------
+
+@RequestParam: La finalidad, es poder recibir parámetros desde una ruta de tipo GET, para trabajar con ellos e incluso poder emitir una respuesta que dependa de los parámetros que hemos obtenido.
+
+-----------------------------------
+
+@Service: Los componentes de servicio son el archivo de clase que contiene la anotación @Service. Estos archivos de clase se utilizan para escribir lógica empresarial en una capa diferente, separada del archivo de clase @RestController
+
+-----------------------------------
+
+@Autowired: es una de las anotaciones más habituales cuando trabajamos con Spring Framework ya que se trata de la anotación que permite inyectar unas dependencias con otras dentro de Spring .
+
+-----------------------------------
+
+@InitBinder: WebDataBinder es una subclase de DataBinder, que se utiliza para completar el enlace de los campos de formulario a las propiedades de JavaBean. El método @InitBinder no puede tener un valor de retorno, debe declararse como vacío
+
+-----------------------------------
+
+@Primary: significa que cuando hay dos tipos de usuario en el sistema, se prefiere la anotación @Primary para la inyección
+
+-----------------------------------
+
+@Qualifier: Cuando hay mas de 1 bean debemos espesificar como parametro la clase que implementa el bean
+
+-----------------------------------
+
+@ModelAttribute: se usa como parte de una aplicación web Spring MVC y se puede usar en dos escenarios. En primer lugar, se puede usar para inyectar datos en un modelo de carga pre-JSP. Esto es especialmente útil para garantizar que se requiere un JSP para mostrar todos los datos en sí.
+
+-----------------------------------
+
+@Configuration: Anotación encargada de definir que la clase es una clase de configuración para el framework
+
+-----------------------------------
+
+
+
+-----------------------------------
+
+
+
+-----------------------------------
+
+
+
+-----------------------------------

@@ -1,0 +1,12 @@
+html,body {
+    height: 100%;
+    width: 100%;
+    user-select: none;
+}
+
+app-menu {
+    position: fixed;
+    top: 1.25rem;
+    left: 1.25rem;
+    z-index: 99999;
+}

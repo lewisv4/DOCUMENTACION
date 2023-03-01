@@ -1,0 +1,58 @@
+/* 
+
+Outline
+
+outline-width
+    px|em|rem|%|....
+
+outline-style
+    none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset|initial|inherit;
+
+    *Estas medidas dependen del navegador*
+    thick (ancho)
+    medium (medio)
+    thin (fino)
+        
+outline-color
+    css native|rgb|rgba|hsl|hsla|hexadecimal|transparent
+
+outline-top-(width | style | color)
+outline-right-(width | style | color)
+outline-bottom-(width | style | color)
+outline-left-(width | style | color)
+
+*/
+
+[class*=box] {
+    width: 200px;
+    height: 200px;
+    margin: 2em;
+}
+
+.box1 {
+    background: yellowgreen;
+    border: 5px solid red;
+    border-top-width: 200px;
+    border-top-color: transparent;
+}
+.img-box{
+    width: 90%;
+    margin: 2em auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+img{
+    border: 5px solid salmon;
+    outline: 5px solid salmon;
+    outline-offset: -40px;
+}
+img:hover{
+    outline-offset: -30px;
+    box-shadow: 10px 10px 10px gray;
+}
+.text{
+    font-size: 2em;
+    position: absolute;
+    color: salmon;
+}

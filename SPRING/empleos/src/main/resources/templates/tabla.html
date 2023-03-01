@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Listado de vacantes</title>
+
+<!-- STYLES CSS -->
+<link th:href="@{/CSS/style.css}" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link th:href="@{/bootstrap/css/jumbotron.css}" rel="stylesheet">
+    <link th:href="@{/bootstrap/css/sticky-footer-navbar.css}" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<header th:insert="fragments/menu :: menu-principal"></header>
+
+	
+	<h1 class="text-primary">Listado de Vacantes</h1>
+	<hr class="text-primary">
+ 	
+ 	<table class="table table-striped table-hover table-bordered">
+ 		<tr>
+ 			<th scope="col">Logo</th>
+ 			<th scope="col">ID Empresa</th>
+ 			<th scope="col">Nombre Oferta</th>
+ 			<th scope="col">Fecha Publicación</th>
+ 			<th scope="col">Salario Ofrecido</th>
+ 			<th scope="col">Descripción Vacante</th>
+ 			<th scope="col">Destacado</th>
+ 			<th scope="col">Opciones</th>
+ 		</tr>
+ 		<tr th:each="vacante: ${vacantes}">
+ 			<td>
+ 				<img alt="imagen vacantes" th:src="@{/images/{img} (img=${vacante.imagen}) }" width="136" height="136">
+ 			</td>
+ 			<td th:text="${vacante.ID}"></td>
+ 			<td th:text="${vacante.nombre}"></td>
+ 			<td th:text="${vacante.fecha}"></td>
+ 			<td th:text="${vacante.salario}"></td>
+ 			<td th:text="${vacante.descripcion}"></td>
+ 			<!--<td th:text="${vacante.destacado == 1} ? 'SI' : 'NO' "></td>--> <!-- CONDICIONAL TERNARIO -->
+ 			<td>
+ 				<span class="badge bg-success" th:if="${vacante.destacado == 1}">SI</span>
+ 				<span class="badge bg-danger"  th:unless="${vacante.destacado == 1}">NO</span>
+ 			</td>
+ 			<td>
+ 				<a th:href="@{/vacantes/view/{id} (id=${vacante.ID}) }" class="btn btn-warning text-white mb-2">Detalle</a>
+ 				<a th:href="@{/vacantes/delete(id=${vacante.ID}) }" class="btn btn-danger text-white mb-2">Eliminar</a>
+ 			</td> 
+ 		</tr>
+ 	</table>
+ 	
+ 	<footer th:insert="fragments/footer :: pie-pagina" class="footer"></footer>
+ 	
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+ 
+</body>
+</html>
